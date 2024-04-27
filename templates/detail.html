@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DETAIL {{ object.title }}</h1>
+    <li>Title: {{ object.title }}</li>
+    <li>Done: {{ object.done }}</li>
+    <li>Done at: {{ object.done_at }}</li>
+    <li>Stare: {{ object.start_date }}</li>
+    <li>End: {{ objects.days }} day</li>
+    {% for user in object.user.all %}
+        <li>{{ user.username }}</li>
+    {% endfor %}
+    <li>{{ object.description }}</li>
+</body>
+</html>

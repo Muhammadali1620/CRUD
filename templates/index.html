@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <a href="{% url 'create' %}"><button type="submit">Create</button></a>
+    <ul>
+        {% for todo in todos %}
+            <li>Title: {{ todo.title }}</li>
+            <li>Done: {{ todo.done }}</li>
+            <li>Done at: {{ todo.done_at }}</li>
+            <li>Stare: {{ todo.start_date }}</li>
+            <li>End: {{ todo.days }} day</li>
+        <a  href="{% url 'delete' pk=todo.pk %}"><Button style="color: red;" type="submit">DELETE</Button></a> <a  href="{% url 'update' pk=todo.pk %}"><Button style="color: rgb(200, 200, 15);" type="submit">EDIT</Button></a> <a  href="{% url 'detail' pk=todo.pk %}"><Button style="color: blue;" type="submit">VIEW</Button></a>
+        {% endfor %}
+    </ul>
+    <a href="?page={{ previouse }}"><button type="submit" >PREVIOUSE</button></a><a href="?page={{ next }}"><button type="submit" >NEXT</button></a>
+</body>
+</html>
